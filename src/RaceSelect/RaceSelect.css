@@ -1,6 +1,5 @@
 .race-select {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -8,6 +7,9 @@
 .race-select-img {
     width: 128px;
     height: 128px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 32px;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;

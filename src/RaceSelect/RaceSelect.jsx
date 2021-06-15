@@ -19,7 +19,7 @@ export function RaceSelect({onSelect, defaultRace, gender}) {
         const idx = keys.indexOf(selected.key);
         idx > 0
             ? setSelected(RACES[keys[idx - 1]])
-            : setSelected(RACES[keys[0]])
+            : setSelected(RACES[keys[keys.length - 1]])
     }
 
     useEffect(() => {
@@ -40,15 +40,19 @@ export function RaceSelect({onSelect, defaultRace, gender}) {
 
     return (
         <div className="race-select">
+            <button 
+                type="button" 
+                className="nes-btn is-dark" 
+                onClick={selectPrev}>&#8592;</button>
             <img 
                 className="race-select-img"
                 src={`/sprites/player/base/${selected.images[getGenderImgKeu()]}`} 
                 alt={selected.name}     
             />
-            <div className="race-select-controls">
-                <button className="button nav-button" onClick={selectPrev}>&#8592;</button>
-                <button className="button nav-button" onClick={selectNext}>&#8594;</button>
-            </div>
+            <button 
+                type="button" 
+                className="nes-btn is-dark" 
+                onClick={selectNext}>&#8594;</button>
         </div>
     )
 }

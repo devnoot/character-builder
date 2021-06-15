@@ -1,9 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body {
-  background: darkblue;
-  color: white;
+html, body, pre, code, kbd, samp {
   font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #00ffbd, #006fd3);
+  background-size: 400% 400%;
+  
+  -webkit-animation: breathanim 10s ease infinite;
+  -moz-animation: breathanim 10s ease infinite;
+  -o-animation: breathanim 10s ease infinite;
+  animation: breathanim 10s ease infinite;
+  
+  @-webkit-keyframes breathanim {
+    0% {
+      background-position: 0% 86%;
+    }
+    50% {
+      background-position: 100% 15%;
+    }
+    100% {
+      background-position: 0% 86%;
+    }
+  }
+  @-moz-keyframes breathanim {
+    0% {
+      background-position: 0% 86%;
+    }
+    50% {
+      background-position: 100% 15%;
+    }
+    100% {
+      background-position: 0% 86%;
+    }
+  }
+  @-o-keyframes breathanim {
+    0% {
+      background-position: 0% 86%;
+    }
+    50% {
+      background-position: 100% 15%;
+    }
+    100% {
+      background-position: 0% 86%;
+    }
+  }
+  @keyframes breathanim {
+    0% {
+      background-position: 0% 86%;
+    }
+    50% {
+      background-position: 100% 15%;
+    }
+    100% {
+      background-position: 0% 86%;
+    }
+  }
 }
 
 .Error {
@@ -24,76 +82,32 @@ body {
   flex-direction: column;
 }
 
-.button {
-    background: blue;
-    border: 1px solid white;
-    color: white;
-    padding: 0;
-    margin: 0;
+.confirm-button {
+  margin-top: 24px;
 }
 
-.button.gender-button {
-    background: inherit;
-    border: none;
-    font-size: 200%;
-    font-family: 'Press Start 2P', cursive;
-    cursor: pointer;
-    margin: 8px 16px;
+.gender-radio:checked {
+  color: gold;
 }
 
-.button.nav-button {
-    background: inherit;
-    border: none;
-    color: gold;
-    font-size: 32px;
-    margin: 4px 8px;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    transition: font-size 0.5s;
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  transition: background-color 0.5 ease-in;
 }
 
-.button.nav-button:active {
-    color: gray;
-    border: gray;
-    background: inherit;
-}
-
-.button.dim {
-    color: darkslategray;
-    font-size: 150%;
-    transition: font-size 0.5s ease-out, margin 0.25s ease-out;
-}
-
-.button.selected {
-    color: gold;
-    transition: font-size 0.5s ease-in, margin 0.25s ease-in;
-}
-
-.gender-select {
-    min-height: 96px;
-}
-
-.name-input {
-    margin-top: 32px;
-    font-size: 18px;
-}
-
-.name-input label {
-    margin-right: 8px;
-    font-size: 18px;
-}
-
-.name-input input {
-    background: inherit;
-    border: none;
-    border-bottom: 4px dashed white;
-    font-size: 18px;
-    color: black;
-    color: white;
-}
-
-.name-input input:focus {
-    outline: none;
-    border-bottom: 4px double gold;
-    color: gold;
+.modal {
+  position: absolute;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  z-index: 20;
 }
