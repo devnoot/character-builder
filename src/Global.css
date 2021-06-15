@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background: darkblue;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.Error {
+  background: black;
+  color: white;
+  white-space: pre;
+  font-size: 14px;
+  border: 1px solid red;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+    background: blue;
+    border: 1px solid white;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.button.gender-button {
+    background: inherit;
+    border: none;
+    font-size: 200%;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 8px 16px;
+}
+
+.button.nav-button {
+    background: inherit;
+    border: none;
+    color: gold;
+    font-size: 32px;
+    margin: 4px 8px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    transition: font-size 0.5s;
+}
+
+.button.nav-button:active {
+    color: gray;
+    border: gray;
+    background: inherit;
+}
+
+.button.dim {
+    color: darkslategray;
+    font-size: 150%;
+    transition: font-size 0.5s ease-out, margin 0.25s ease-out;
+}
+
+.button.selected {
+    color: gold;
+    transition: font-size 0.5s ease-in, margin 0.25s ease-in;
+}
+
+.gender-select {
+    min-height: 96px;
+}
+
+.name-input {
+    margin-top: 32px;
+    font-size: 18px;
+}
+
+.name-input label {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.name-input input {
+    background: inherit;
+    border: none;
+    border-bottom: 4px dashed white;
+    font-size: 18px;
+    color: black;
+    color: white;
+}
+
+.name-input input:focus {
+    outline: none;
+    border-bottom: 4px double gold;
+    color: gold;
+}
